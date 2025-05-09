@@ -1,20 +1,22 @@
 <div class="text-center">
-    Although I am not a CS major, I spent a lot of my freshman year taking
-    required introductory CS courses as a requirement of my major.
-    (This was also because many of the electrical engineering 
-    courses I wanted and needed to take required many more 
-    prerequisite courses that I had to meet in comparison.)
-    While I am still more focused on hardware efforts, that first year
-    gave me a lot of valueable foundational coding experience that I 
-    heavily utilized, especially by completeing a Software Engineering
-    Internship in the summer before my sophomore year of college.
-    I hope that these coding skills will help me in my hardware engineering
-    and electrical engineering efforts, as programming is usually a
-    necessity even in these disiplines. Here, I wanted to showcase 
-    some CS heavy projects I completed that showcase all of the 
-    foundational skills I gained in programming back then (besides
-    this website, of course)!
-    <br>
+    <p>
+        Although I am not a CS major, I spent a lot of my freshman year taking
+        required introductory CS courses as a requirement of my major.
+        (This was also because many of the electrical engineering 
+        courses I wanted and needed to take required many more 
+        prerequisite courses that I had to meet in comparison.)
+        While I am still more focused on hardware efforts, that first year
+        gave me a lot of valueable foundational coding experience that I 
+        heavily utilized, especially by completeing a Software Engineering
+        Internship in the summer before my sophomore year of college.
+        I hope that these coding skills will help me in my hardware engineering
+        and electrical engineering efforts, as programming is usually a
+        necessity even in these disiplines. Here, I wanted to showcase 
+        some CS heavy projects I completed that showcase all of the 
+        foundational skills I gained in programming back then (besides
+        this website, of course)!
+    </p>
+
     <b>Layoff/Recall Feature</b>
     <p>
         Background and Purpose
@@ -79,7 +81,34 @@
          worldwide and made it past 2 rounds of judging out of 3 and created
          this application in 24 hours.
         <br>
-        
+        This application utilizes Vertex AI to take images given to us of 
+        trailers at different angles and extract asset details about a particular 
+        trailer and display it to the user through a Google Maps dashboard. 
+        This application has the potential to save UPS over $33M as it will 
+        help enhance information and trailer identification. 
+        <br>
+        Features
+        <br>
+        <li>Stored images of trailers given to us in Google Image Buckets 
+            (where in a real-life implementation, images from security cameras 
+            would be uploaded to these Google Image Buckets)
+        </li>
+        <li>Extracted data from images using Vertex AI Multimodal Model 
+            (pre-trained AI model)
+        </li>
+        <li>Utilized a Firestore database to store location information 
+            and other extracted asset details
+        </li>
+        <li>Used a NestJS API to get asset details for the application 
+            from the database
+        </li>
+        <li>Created an Angular application that utilized a Google Maps 
+            dashboard to display the locations of every trailer in a 
+            particular area
+        </li>
+        <li>Implemented Quick Cards to locate the nearest vehicles to the user's 
+            current selected trailer location
+        </li>
     </p>
     <embed
         src="/2024upshack.pdf"
@@ -89,5 +118,4 @@
         style="border: none; margin: 0 auto; display: block"
     >
     <br>
-    <b>AI Outfit Recommender Application</b>
 </div>
