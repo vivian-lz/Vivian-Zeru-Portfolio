@@ -1,0 +1,5 @@
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:active {
+  background-color: #DEF7FF; /* Change this to any color you like */
+}
