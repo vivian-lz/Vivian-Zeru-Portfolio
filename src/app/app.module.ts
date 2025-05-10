@@ -17,6 +17,8 @@ import { AboutComponent } from './about/about.component';
 import { ResumeComponent } from './resume/resume.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,15 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     CarouselModule.forRoot()
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    {
+      provide: 'BootstrapVersion',
+      useFactory: (platformId: Object) => {
+        // Return a default version (e.g., 5) during SSR
+        return isPlatformBrowser(platformId) ? undefined : 'bs5';
+      },
+      deps: [PLATFORM_ID]
+    }
   ],
   bootstrap: [AppComponent]
 })
