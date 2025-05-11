@@ -58,11 +58,27 @@
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;<u>Features</u>
         <br>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Add Button to Create a Layoff/Recall</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Edit Button to Edit a Layoff/Recall</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Button Popup to enter Layoff Information</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Visible Expire Date for the Employee/User</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Automatically removes layoff/recall once it expires</li>
+        <li>Add Button to Create a Layoff/Recall</li>
+        <li>Edit Button to Edit a Layoff/Recall</li>
+        <li>Button Popup to enter Layoff Information</li>
+        <li>Visible Expire Date for the Employee/User</li>
+        <li>Auto-calculates expiration date for a layoff/recall</li>
+        <li>Automatically removes layoff/recall once it expires</li>
+        <li>Auto-filter feature on gateway, shop, and JobClass dropdowns 
+            to avoid invalid dropdown combinations between these three fields
+        </li>
+        <li>Disabled edit pen when a layoff/recall is accepted, refused, 
+            or expired by the user (employee)
+        </li>
+        <li>Cards for each layoff/recall display on employee profile 
+            (in the layoff/recall tab)
+        </li>
+        <li>Add and edit features are limited access based on employee 
+            roles within the application
+        </li>
+        <li>Includes an optional comment box to add any additional or 
+            necessary notes
+        </li>
     </p>
     <embed
         src="/2024internpres.pdf"
@@ -86,28 +102,32 @@
         This application has the potential to save UPS over $33M as it will 
         help enhance information and trailer identification. 
         <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;Features
+        &nbsp;&nbsp;&nbsp;&nbsp;<u>Features</u>
         <br>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Stored images of trailers given to us in Google Image Buckets 
+        <li>Stored images of trailers given to us in Google Image Buckets 
             (where in a real-life implementation, images from security cameras 
             would be uploaded to these Google Image Buckets)
         </li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Extracted data from images using Vertex AI Multimodal Model 
+        <li>Extracted data from images using Vertex AI Multimodal Model 
             (pre-trained AI model)
         </li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Utilized a Firestore database to store location information 
+        <li>Utilized a Firestore database to store location information 
             and other extracted asset details
         </li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Used a NestJS API to get asset details for the application 
+        <li>Used a NestJS API to get asset details for the application 
             from the database
         </li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Created an Angular application that utilized a Google Maps 
+        <li>Created an Angular application that utilized a Google Maps 
             dashboard to display the locations of every trailer in a 
             particular area
         </li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;Implemented Quick Cards to locate the nearest vehicles to the user's 
+        <li>Implemented Quick Cards to locate the nearest vehicles to the user's 
             current selected trailer location
         </li>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;I mainly worked on this project as a 
+        Frontend Developer, implementing the application itself in Angular 
+        and the visual features such as the Google Maps dashboard.
     </p>
     <embed
         src="/2024upshack.pdf"
