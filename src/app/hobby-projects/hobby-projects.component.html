@@ -17,20 +17,53 @@
      <p>
         <li>
             Designing a PCB in Eagle that uses an ESP32, soil moisture, BME280 
-            temperature and humidity sensor, and BH2750 light sensor to monitor 
+            temperature and humidity sensor, and BH1750 light sensor to monitor 
             plant health. Will have 2 LEDs that indicate if the plant needs more light 
             or more water. In the future, may try to add ML processing that 
             predicts how long the plant can go without water based on previous 
             trends.
+            <br>
+            Current Progress: PCB is built to support sensor and ESP32 modules. I will 
+            build a new PCB that supports the raw ICs of these components to 
+            decrease space as well and will assemble both versions of the device. 
         </li>
      </p>
+     <div style="max-width: 1000px; margin: 0 auto;">
+        <carousel>
+            <slide>
+              <img src="/PlantDevicePinBoard.png" alt="first.png slide" style="display: block; width: 65%; margin: 0 auto;">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>1st PCB Iteration - Modules</h3>
+                <p>This is how the PCB for the module implementation will look like once manufactured 
+                    through JLCPCB. The rendering was created in Eagle.
+                </p>
+              </div>
+            </slide>
+            
+             <!-- Left arrow -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <!-- Right arrow -->
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+          </carousel>
+    </div>
      <br>
      &nbsp;&nbsp;&nbsp;&nbsp;<b>Raspberry Pi: AI-Enabled Security System (In Progress)</b>
      <p>
         <li>
-            Considering trying to create utilizing a Raspberry Pi 4 
-            Model B that I was given from a professor I had in Fall 
-            2024 (Thank you Professor Landman!), will be in progress
+            Utilizing a Raspberry Pi 4 Module B gifted to me from a professor as well as 
+            a motion sensor and Raspberry Pi Camera Module 2 to create a device that 
+            can detect a person who comes up to the area being monitored and 
+            can capture who the person is. In the future, AI may be used to do image 
+            processing and detect who the person is.
+            <br>
+            Current Progress: Electronics are assembled and code is being worked on in 
+            Python on the Raspberry Pi (firmware).
         </li>
      </p>
      <br>
