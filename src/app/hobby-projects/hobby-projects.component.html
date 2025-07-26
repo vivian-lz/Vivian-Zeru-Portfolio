@@ -44,20 +44,42 @@
             sensor to display the temperature, humidity, pressume, and approximate altitude on an 
             LCD while using an RGB LED to visually display the temperature as well.
             trends.
+        </li>
             <br>
-            Current Progress: I created this in high school using an Arduino Uno. Now, I have made this 
-            project more advanced by designing the PCB in Eagle that uses an ESP32 module instead. 
-            I am in the process of learning to gain more control over the BME280 communication protocols 
+            Current Progress: 
+            <li>I created this in high school using an Arduino Uno. Now, I have made this 
+            project more advanced by designing the PCB in Eagle that uses an ESP32 instead. </li>
+            <li>I already completed the version that utilizes the ESP32 and BME280 modules, but not the raw ICs. I designed it in Eagle 
+                and have not yet ordered it through JLCPCB for manufacturing and to assemble the device, but this will be done in the future.
+            </li>
+            <li>I am currently working on finishing the IC version, which is described below: </li>
+            <li>I have created the schematic for the board, utilizing an LDO, USB-C connector, USB to Serial Chip, ESP32 IC, 
+                BME280, Crystal to control the clock of the ESP32, reset button to control the ESP32 in case of freezing, an RGB 
+                LED as in the previous version, and an LCD as in the previous version to display the temperature, humidity, pressure, 
+                and approximate altitude.
+            </li>
+            <li>I am currently working on the board, which right now is expected to result in a 24.73% decrease in area 
+                compared to the version utilizing the modules. (4401.71mm2 versus 3432.93mm2)
+            </li>
+            <li>I am also in the process of learning to gain more control over the BME280 communication protocols 
             by utilizing I2C communication through an STM32 Nucelo-64. In the future, I would like to use 
             Verilog to create the sensor and control the communication even more. I also would hope to design 
             the PCB using the raw ICs in the future, and also get the PCBs manufactured to assemble a full 
-            working product.
+            working product.</li>
             <br>
             <a href="https://github.com/vivian-lz/weather-station-v2">GitHub Repo</a>
-        </li>
      </p>
      <div style="max-width: 1000px; margin: 0 auto;">
         <carousel>
+            <slide>
+              <img src="/weatherstationic.png" alt="first.png slide" style="display: block; width: 65%; margin: 0 auto;">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>2nd PCB Iteration - Raw IC</h3>
+                <p>This is how the PCB for the raw IC implementation is currently expected to look once manufactured 
+                    through JLCPCB. The rendering was created in Eagle.
+                </p>
+              </div>
+            </slide>
             <slide>
               <img src="/Weather_Station_Modules.png" alt="first.png slide" style="display: block; width: 65%; margin: 0 auto;">
               <div class="carousel-caption d-none d-md-block">
