@@ -45,6 +45,21 @@
             LCD while using an RGB LED to visually display the temperature as well.
             trends.
         </li>
+        <br>
+        <b>Features</b>
+        <li>ESP32 IC acts as the main chip/microcontroller of this device with the BME280 IC creating the weather station capabilities.</li>
+        <li>Uses I2C communication between the microcontroller and the BME280</li>
+        <li>Powered through charging with a USB-C port that is powered on 5 V</li>
+        <li>Board runs on 3.3 V power</li>
+        <li>5-3V LDO to regulate voltage between ESP32 and USB-C connector</li>
+        <li>Utilizes a crystal (40 kHz) as the main clock of the ESPS32 and the device itself.</li>
+        <li>Includes a reset button to manually prevent freezing issues with the ESP32 IC.</li>
+        <li>RGB LED displays 6 colors to visually represent the temperature, while an LCD display visually shows the user the temperature, humidity, pressure, and approximate altitude given by the BME280.</li>
+        <li>Firmware to run on the ESP32 microcontroller is created in C++ utilizing the Arduino IDE.</li>
+        <li>Schematic takes advantage of decoupling and load capacitors as well as pullup, pulldown, and current-limiting resistors, with a total of 13 of each.</li>
+        <li>Layout utilizes differential routing and matches the routing for high speed signals like the differential 
+            pairs for the USB-C and the I2C SDA/SCL lines.
+        </li>
             <br>
             Current Progress: 
             <li>I created this in high school using an Arduino Uno. Now, I have made this 
