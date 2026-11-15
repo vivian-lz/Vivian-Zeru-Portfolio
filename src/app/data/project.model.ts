@@ -43,6 +43,7 @@ export interface Project {
   imagesHeading?: string;
   links?: { label: string; url: string }[];
   video?: string;
+  youtubeVideoId?: string; // The 11-character ID from a YouTube watch link.
   metrics?: { label: string; value: string; context: string }[];
   limitation?: string;
   parentId?: string; // Supporting IC studies are grouped inside their collection.

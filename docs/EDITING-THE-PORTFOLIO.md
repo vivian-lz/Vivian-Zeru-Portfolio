@@ -35,6 +35,7 @@ Copy an entry in `projects.ts` and update its fields. Use a unique lowercase hyp
 - `stage` adds precision, such as Schematic Design & Simulation or IR Receiver Prototyping.
 - `focus` describes engineering areas; `tools` lists specific tools used.
 - `sections` contains readable paragraphs or bullet lists. Separate verified work from future plans.
+- `youtubeVideoId` adds a responsive presentation section with an explicit load button and a direct YouTube link. Use only the 11-character video ID. The iframe is created after the visitor chooses to load it.
 - `images` is optional. An entry without photographs gets a decorative text placeholder, never generated project imagery.
 - A section can also have its own `images` list. Use this when figures belong to a particular stage or device, as in the SYMBIO-X schematic work. `imagesHeading` labels the main gallery when its photographs need extra context.
 - `parentId: 'ic-design'` groups a supporting study inside the IC collection. It still has a shareable page and appears in directory searches.

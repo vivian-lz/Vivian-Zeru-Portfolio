@@ -169,6 +169,42 @@
         </p>
       </section>
     }
+    @if (item.youtubeVideoId && youtubeEmbedUrl) {
+      <section
+        class="surface section-space"
+        aria-labelledby="presentation-title"
+      >
+        <h2 id="presentation-title">Team presentation</h2>
+        <p>Watch our team present the {{ item.title }} project.</p>
+        @if (showYoutubeVideo) {
+          <iframe
+            class="youtube-video"
+            [src]="youtubeEmbedUrl"
+            [title]="item.title + ' — team presentation'"
+            loading="lazy"
+            allow="encrypted-media; picture-in-picture; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        } @else {
+          <button
+            class="button"
+            type="button"
+            (click)="showYoutubeVideo = true"
+          >
+            Load Presentation Video <span aria-hidden="true">▶</span>
+          </button>
+        }
+        <p class="video-link">
+          <a
+            [href]="'https://www.youtube.com/watch?v=' + item.youtubeVideoId"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Watch on YouTube <span aria-hidden="true">→</span></a
+          >
+        </p>
+      </section>
+    }
     @if (related.length) {
       <section class="section-space">
         <h2>Connected work</h2>

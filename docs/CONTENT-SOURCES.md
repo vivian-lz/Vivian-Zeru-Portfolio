@@ -11,4 +11,6 @@
 
 - The original Arduino weather station photograph was supplied by Vivian during review. Its LCD reading values were obscured using the image-editing tool at her suggestion. The caption identifies it as a power-on roughly two years after initial completion, when the displayed readings were incorrect. The project’s firmware repository was checked at `github.com/vivian-lz/weather-station-product`; known project repository links are retained, and the portfolio’s own GitHub link is included.
 
+- The Shoe Drop Device presentation uses the Team 9 YouTube video supplied by Vivian (`Fx-5khizxQ0`). Public LinkedIn and Vanderbilt project pages could not be read from this environment. The team photo visible in chat was not available as a downloadable workspace file and has not been recreated or substituted.
+
 The site intentionally distinguishes simulation from measurement, team work from individual ownership, architectural comparisons from measured speedups, and estimated business benefits from realized outcomes.

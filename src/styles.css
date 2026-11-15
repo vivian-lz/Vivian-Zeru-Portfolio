@@ -907,6 +907,16 @@ input::placeholder {
 .study-accordion > div {
   padding: 0 24px 24px;
 }
+.youtube-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 10px;
+}
+.video-link {
+  margin-top: 18px;
+}
 .project-video {
   display: block;
   width: 100%;

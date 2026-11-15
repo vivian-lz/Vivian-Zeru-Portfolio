@@ -1020,13 +1020,14 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
+    youtubeVideoId: 'Fx-5khizxQ0',
     links: [
       {
         label: 'Team 9 Project Story',
         url: 'https://www.vanderbilt.edu/the-wondry/tikkun-olam-makers-2023-makeathon/',
       },
       {
-        label: 'Watch Project Video',
+        label: 'Watch Team Presentation',
         url: 'https://www.youtube.com/watch?v=Fx-5khizxQ0',
       },
     ],
