@@ -53,6 +53,7 @@ export const LEADERSHIP = [
     dates: 'Oct 2024 – Present',
     bullets: [
       'Lead and support the student organization, building an executive board and strengthening member retention.',
+      'Serve as Rainworks Electrical Lead (Fall 2025 – Present).',
       'Contribute electrical leadership and hands-on work to the stormwater monitoring project.',
     ],
     tags: ['Leadership', 'Sustainability', 'Hardware'],
