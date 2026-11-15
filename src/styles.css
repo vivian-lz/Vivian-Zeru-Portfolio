@@ -827,6 +827,12 @@ input::placeholder {
   font-size: 1.4rem;
   margin-bottom: 10px;
 }
+.evidence-heading {
+  font-size: 1.4rem;
+}
+.section-gallery {
+  margin-top: 24px;
+}
 .gallery {
   margin: 0;
   background: var(--white);

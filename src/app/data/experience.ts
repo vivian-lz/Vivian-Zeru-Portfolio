@@ -29,8 +29,8 @@ export const RESEARCH = [
     role: 'Undergraduate Research Assistant · Hardware Team',
     dates: 'Feb – Oct 2025',
     bullets: [
-      'Selected analog front-end chips and captured Eagle schematics for EDA/GSR sensing in an existing EEG design.',
-      'Assembled wearable sensing PCBs using microscopic SMD soldering, including QFN/WLCSP components.',
+      'Evaluated AFE candidates and captured an initial EDA/GSR schematic for an existing EEG device; documented component tradeoffs and recommendations.',
+      'Fully SMD-assembled two different sensing devices, including microscopic QFN/WLCSP work; these were separate from the later EDA/GSR schematic effort.',
     ],
     tags: ['PCB Design', 'Mixed-signal', 'PCBA'],
   },

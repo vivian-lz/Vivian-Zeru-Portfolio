@@ -103,58 +103,115 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'wearable-health-sensor',
-    title: 'Wearable Health Sensor',
+    title: 'Wearable Sensing Hardware',
     category: 'Organization',
     status: 'Completed',
     summary:
-      'Schematic capture, analog front-end selection, and microscopic PCB assembly.',
+      'SMD assembly across two devices, followed by EDA/GSR component evaluation and schematic capture for a third.',
     focus: ['PCB Design', 'Analog Circuit Design'],
     tools: ['Eagle', 'SMD Reflow', 'PCBA'],
     context: 'SYMBIO-X Lab · Undergraduate research',
-    role: 'Hardware research assistant: AFE selection, schematic capture, and assembly.',
+    role: 'Hardware research assistant: SMD assembly, preliminary testing, component evaluation, and schematic capture across distinct devices.',
     problem:
-      'Support wearable sensing hardware for physiological monitoring and explore adding EDA/GSR sensing to an existing EEG design.',
+      'Support physiological sensing hardware through hands-on PCB assembly and explore adding EDA/GSR sensing to another existing EEG device.',
     sections: [
       {
-        title: 'My contribution',
+        title: '1 · First device: assembly & initial testing',
+        paragraphs: [
+          'The assembly photographs on this page show the first device I worked on in the lab. I fully assembled its PCB using SMD soldering, with hand-applied solder paste, a microscope, tweezers, and a hot-air station.',
+          'After assembly, I performed preliminary testing, then observed another lab member flash firmware and demonstrate the device operating with the lab’s application. I did not perform that firmware flashing.',
+        ],
+      },
+      {
+        title: '2 · Second device: SMD assembly',
+        paragraphs: [
+          'I subsequently fully assembled a different device using SMD soldering. This was a separate hardware assembly effort from the device shown in the photographs and from the later EDA/GSR schematic work.',
+        ],
+      },
+      {
+        title: '3 · Third device: EDA/GSR schematic capture',
+        paragraphs: [
+          'For another existing EEG device, I investigated an EDA/GSR sensing addition. My October 1, 2025 report documents an initial multi-chip schematic implementation in Eagle, rather than a redesign of the first photographed device.',
+          'The initial design used a voltage reference, an op-amp stage, and an SPI ADC. The original schematic excerpts below come directly from that progress report.',
+        ],
         bullets: [
-          'Selected analog front-end components and captured schematics in Eagle for an EDA/GSR sensing addition.',
-          'Assembled wearable PCBs using hand-applied solder paste, a microscope, tweezers, and a hot-air station.',
-          'Developed hands-on assembly experience with microscopic QFN/WLCSP components.',
+          'Selected an LT6656 voltage reference, MCP6072 op-amp, and MCP3201 ADC for the initial schematic approach.',
+          'Considered component availability, supply current, and downloadable Eagle library support during selection.',
+          'Reviewed the existing board’s power arrangement to avoid adding unnecessary regulation, and captured the reference, amplifier, and ADC connections.',
+        ],
+        images: [
+          {
+            src: '/project-images/gsr-reference-schematic.png',
+            alt: 'Eagle voltage-reference circuit excerpt for the third device’s proposed EDA addition',
+            caption:
+              'Third device · Initial EDA voltage-reference schematic, October 1 report.',
+            fit: 'contain',
+          },
+          {
+            src: '/project-images/gsr-amplifier-schematic.png',
+            alt: 'Eagle op-amp circuit excerpt for the third device’s proposed EDA addition',
+            caption:
+              'Third device · Initial EDA amplifier schematic, October 1 report.',
+            fit: 'contain',
+          },
+          {
+            src: '/project-images/gsr-adc-schematic.png',
+            alt: 'Eagle ADC circuit excerpt for the third device’s proposed EDA addition',
+            caption:
+              'Third device · Initial EDA ADC schematic and digital interface, October 1 report.',
+            fit: 'contain',
+          },
         ],
       },
       {
-        title: 'Engineering context',
+        title: 'AFE comparison & design tradeoffs',
         paragraphs: [
-          'The lab’s wearable platform supported physiological measurements including EEG, EMG, ECG, and NIRS. My work focused on the hardware contributions above; the full platform was a team research effort.',
+          'My October 3 notes compared the initial multi-chip approach with integrated AFE candidates, including ADS1292R and AD5940, and additional options such as AFE1594, AFE4900, and AFE4460.',
+          'I considered resolution, gain, power, noise, footprint, channel count, application fit, and integration complexity. The notes favored ADS1292R among the first two candidates and identified AFE159x as another option for further consideration.',
+          'These were component assessments and recommendations, not a record of a final AFE being fabricated, integrated, or validated. Candidate specification values in the original notes were research observations, not my measurements.',
         ],
       },
       {
-        title: 'Result',
+        title: 'Scope & outcome',
         paragraphs: [
-          'I completed sensor assembly and observed a wearable working with the lab’s measurement application. This assembly result is distinct from the later schematic work on EDA/GSR integration.',
+          'The first two efforts were PCB assembly work on existing device designs. The third produced an initial EDA/GSR schematic and documented component-selection reasoning for a different device.',
+          'The October 1 report listed schematic review and subsequent layout integration as future work. The documents do not establish completed layout integration, fabrication, or hardware validation of the EDA/GSR addition.',
         ],
       },
     ],
+    imagesHeading: 'First device · Assembly photographs',
     images: [
       {
         src: '/researchWearable.jpg',
-        alt: 'Assembled gold wearable sensor connected to lab test equipment',
-        caption: 'Assembled wearable sensor and its test setup.',
+        alt: 'First lab device, fully SMD-assembled by Vivian, connected to the lab setup',
+        caption:
+          'First device · PCB fully assembled by me using SMD soldering. I performed preliminary testing, then observed firmware flashing and a functional demonstration by another lab member. This is not the later EDA/GSR schematic device.',
         fit: 'cover',
         position: '50% 85%',
       },
       {
         src: '/researchSetup.jpg',
-        alt: 'Microscope and tools used for wearable PCB assembly',
-        caption: 'PCB assembly workstation.',
+        alt: 'Microscope and tools used during assembly of the first lab device',
+        caption:
+          'First device · My PCB assembly workstation, separate from the later AFE and schematic work.',
         fit: 'cover',
       },
       {
         src: '/wearableSolder.jpg',
-        alt: 'Microscopic view of solder paste application',
-        caption: 'Solder paste applied under the microscope.',
+        alt: 'Microscopic solder paste application during assembly of the first lab device',
+        caption:
+          'First device · Solder paste applied under the microscope during SMD assembly.',
         fit: 'cover',
+      },
+    ],
+    links: [
+      {
+        label: 'Read Schematic Progress Report',
+        url: '/reports/symbio-x-eda-schematic-report.pdf',
+      },
+      {
+        label: 'Read AFE Comparison Notes',
+        url: '/reports/symbio-x-gsr-chip-notes.pdf',
       },
     ],
   },

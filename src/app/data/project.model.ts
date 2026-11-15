@@ -23,6 +23,7 @@ export interface ProjectSection {
   title: string;
   paragraphs?: string[];
   bullets?: string[];
+  images?: ProjectImage[]; // Optional figures belonging to this specific stage of work.
 }
 
 export interface Project {
@@ -39,6 +40,7 @@ export interface Project {
   problem: string;
   sections: ProjectSection[];
   images?: ProjectImage[];
+  imagesHeading?: string;
   links?: { label: string; url: string }[];
   video?: string;
   metrics?: { label: string; value: string; context: string }[];
