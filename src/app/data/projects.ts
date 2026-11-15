@@ -119,19 +119,19 @@ export const PROJECTS: Project[] = [
         title: '1 · First device: assembly & initial testing',
         paragraphs: [
           'The assembly photographs on this page show the first device I worked on in the lab. I fully assembled its PCB using SMD soldering, with hand-applied solder paste, a microscope, tweezers, and a hot-air station.',
-          'After assembly, I performed preliminary testing, then observed another lab member flash firmware and demonstrate the device operating with the lab’s application. I did not perform that firmware flashing.',
+          'After assembly, I performed preliminary testing, then observed another lab member flash firmware and demonstrate the device operating with the lab’s application.',
         ],
       },
       {
         title: '2 · Second device: SMD assembly',
         paragraphs: [
-          'I subsequently fully assembled a different device using SMD soldering. This was a separate hardware assembly effort from the device shown in the photographs and from the later EDA/GSR schematic work.',
+          'I subsequently fully assembled a second, different lab device using SMD soldering.',
         ],
       },
       {
         title: '3 · Third device: EDA/GSR schematic capture',
         paragraphs: [
-          'For another existing EEG device, I investigated an EDA/GSR sensing addition. My October 1, 2025 report documents an initial multi-chip schematic implementation in Eagle, rather than a redesign of the first photographed device.',
+          'For a third device, an existing EEG PCB, I investigated an EDA/GSR sensing addition. My October 1, 2025 report documents the initial multi-chip schematic implementation in Eagle.',
           'The initial design used a voltage reference, an op-amp stage, and an SPI ADC. The original schematic excerpts below come directly from that progress report.',
         ],
         bullets: [
@@ -168,14 +168,14 @@ export const PROJECTS: Project[] = [
         paragraphs: [
           'My October 3 notes compared the initial multi-chip approach with integrated AFE candidates, including ADS1292R and AD5940, and additional options such as AFE1594, AFE4900, and AFE4460.',
           'I considered resolution, gain, power, noise, footprint, channel count, application fit, and integration complexity. The notes favored ADS1292R among the first two candidates and identified AFE159x as another option for further consideration.',
-          'These were component assessments and recommendations, not a record of a final AFE being fabricated, integrated, or validated. Candidate specification values in the original notes were research observations, not my measurements.',
+          'This stage produced a comparative component assessment and recommendations for further design review.',
         ],
       },
       {
         title: 'Scope & outcome',
         paragraphs: [
           'The first two efforts were PCB assembly work on existing device designs. The third produced an initial EDA/GSR schematic and documented component-selection reasoning for a different device.',
-          'The October 1 report listed schematic review and subsequent layout integration as future work. The documents do not establish completed layout integration, fabrication, or hardware validation of the EDA/GSR addition.',
+          'At the time of the October 1 report, the EDA/GSR schematic was awaiting review, with layout integration identified as the next stage of work.',
         ],
       },
     ],
@@ -185,7 +185,7 @@ export const PROJECTS: Project[] = [
         src: '/researchWearable.jpg',
         alt: 'First lab device, fully SMD-assembled by Vivian, connected to the lab setup',
         caption:
-          'First device · PCB fully assembled by me using SMD soldering. I performed preliminary testing, then observed firmware flashing and a functional demonstration by another lab member. This is not the later EDA/GSR schematic device.',
+          'First device · PCB fully assembled by me using SMD soldering. I performed preliminary testing, then observed firmware flashing and a functional demonstration by another lab member.',
         fit: 'cover',
         position: '50% 85%',
       },
