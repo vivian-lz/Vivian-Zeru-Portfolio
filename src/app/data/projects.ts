@@ -879,7 +879,7 @@ export const PROJECTS: Project[] = [
       'An Arduino weather station with sensor readouts, RGB indication, and a custom enclosure.',
     focus: ['Embedded Systems'],
     tools: ['Arduino Uno', 'Arduino IDE', 'BME280', 'OpenSCAD'],
-    context: 'High-school senior-year project-based programming',
+    context: 'High-school senior-year project-based programming · 2022–2023',
     role: 'Individual device programming, integration, and enclosure design.',
     problem:
       'Make environmental measurements readable in a portable, self-contained device.',
@@ -894,7 +894,17 @@ export const PROJECTS: Project[] = [
         title: 'Iteration & result',
         paragraphs: [
           'Designed and rendered a 3D-printed enclosure in OpenSCAD, presented successive iterations to the class, and refined the device over the school year to a final product.',
+          'The device worked when I completed and originally used it. The photograph was taken roughly two years later, when I plugged it in again; the displayed measurements from that later power-on were incorrect.',
         ],
+      },
+    ],
+    images: [
+      {
+        src: '/project-images/original-weather-station-lcd-obscured.png',
+        alt: 'Original Arduino Uno weather station with a wired LCD and illuminated RGB LED; numerical readings obscured',
+        caption:
+          'Completed Arduino prototype, photographed during a power-on roughly two years later. LCD readings obscured because that later display did not show representative measurements.',
+        fit: 'contain',
       },
     ],
     links: [
@@ -1150,6 +1160,12 @@ export const PROJECTS: Project[] = [
         paragraphs: [
           'I originally built this portfolio myself using Angular and knowledge gained during my software internship, with tutorial guidance and AI debugging assistance. The redesign organizes project content, improves mobile layouts, and keeps the code readable for future editing.',
         ],
+      },
+    ],
+    links: [
+      {
+        label: 'View GitHub',
+        url: 'https://github.com/vivian-lz/Vivian-Zeru-Portfolio',
       },
     ],
   },

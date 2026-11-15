@@ -5,7 +5,7 @@
       target="_blank"
       rel="noopener noreferrer"
       class="gallery-image"
-      aria-label="Open original project image in a new tab"
+      aria-label="Open full-size project image in a new tab"
     >
       <img
         [src]="image.src"
@@ -18,7 +18,7 @@
     <figcaption aria-live="polite">
       {{ image.caption }}
       <a [href]="image.src" target="_blank" rel="noopener noreferrer"
-        >Open original <span aria-hidden="true">→</span></a
+        >Open full-size image <span aria-hidden="true">→</span></a
       >
     </figcaption>
     @if (images.length > 1) {
