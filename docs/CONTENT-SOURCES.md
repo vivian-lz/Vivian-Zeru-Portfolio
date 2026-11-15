@@ -1,0 +1,11 @@
+# Content sources and scope
+
+- Original project descriptions, images, and media came from this portfolio's course, organization, hobbyist, and software pages. Those entries were migrated into `src/app/data/projects.ts`; no original project was dropped.
+- Status, scope, and ownership updates for Weather Station V2, plant-monitor hardware, Sproutly, Raspberry Pi security, Rad-Hard CPU, stormwater, coursework, and the UPS delivery calendar came from Vivian's redesign review.
+- Smart Dorm Light uses Vivian's supplied Phase 1 summary and links to `github.com/vivian-lz/smart-light`. The provided summary is the basis for verified progress; planned features remain planned.
+- Sproutly's architecture was cross-checked against `github.com/vivian-lz/sproutly` at commit `45e23b7b93f4a612c58b4dfaa923677774643810`. Its hardware, firmware, software, and enclosure documents describe proposed systems and conceptual geometry; they do not establish a finished product. This portfolio does not present the concept's screen artwork or enclosure as a fabricated device.
+- The bandgap case study comes from Vivian's supplied `ECE6341-VREF-Vivian-REP.pdf`, preserved as `public/reports/bandgap-reference.pdf`. Schematic, reference-voltage, temperature-sensitivity, and supply-rejection figures were extracted directly from its embedded images, without redrawing.
+- Booth multiplier layout and schematic images were extracted directly from the existing `public/vlsifinalproj.pdf`, Figures 9 and 7. Other VLSI study images remain the repository originals. VLSI work is design/layout/simulation, not a claim of fabricated silicon.
+- Experience, research, leadership, education, and skills were transcribed from the current public resume and About page. The older public resume was removed from site assets because it contained a GPA; its original is preserved outside the checkout and in existing Git history. No GPA is added to the site or new source documents.
+
+The site intentionally distinguishes simulation from measurement, team work from individual ownership, architectural comparisons from measured speedups, and estimated business benefits from realized outcomes.

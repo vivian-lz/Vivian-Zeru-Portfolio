@@ -1,0 +1,57 @@
+<article class="project-card">
+  <a
+    class="card-image"
+    [routerLink]="['/projects', project.id]"
+    [attr.aria-label]="'Explore ' + project.title"
+  >
+    @if (project.images?.[0]; as image) {
+      <img
+        [src]="image.src"
+        [alt]="image.alt"
+        loading="lazy"
+        width="600"
+        height="360"
+        [style.object-fit]="image.fit || 'contain'"
+        [style.object-position]="image.position || 'center'"
+      />
+      @if (project.id === "stormwater-runoff") {
+        <span class="image-note">Earlier prototype</span>
+      }
+    } @else {
+      <div class="project-placeholder" aria-hidden="true">
+        <span>{{
+          project.focus.includes("IC Design")
+            ? "⌘"
+            : project.id === "smart-dorm-light"
+              ? "☼"
+              : "✧"
+        }}</span
+        ><span>{{ project.focus[0] }}</span>
+      </div>
+    }
+  </a>
+  <div class="card-content">
+    <div class="card-meta">
+      <span class="eyebrow">{{ project.category }}</span
+      ><span class="status" [attr.data-status]="project.status">{{
+        project.status
+      }}</span>
+    </div>
+    <h3>
+      <a [routerLink]="['/projects', project.id]">{{ project.title }}</a>
+    </h3>
+    @if (project.stage) {
+      <p class="stage">{{ project.stage }}</p>
+    }
+    <p>{{ project.summary }}</p>
+    <ul class="tags" aria-label="Tools and focus">
+      @for (tag of project.tools.slice(0, 2); track tag) {
+        <li>{{ tag }}</li>
+      }
+    </ul>
+    <a class="text-link" [routerLink]="['/projects', project.id]"
+      >Explore {{ project.id === "ic-design" ? "Collection" : "Project" }}
+      <span aria-hidden="true">→</span></a
+    >
+  </div>
+</article>

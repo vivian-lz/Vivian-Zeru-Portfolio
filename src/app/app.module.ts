@@ -1,58 +1,42 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
+import {
+  BrowserModule,
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { CourseProjectsComponent } from './course-projects/course-projects.component';
-import { OrgProjectsComponent } from './org-projects/org-projects.component';
-import { HobbyProjectsComponent } from './hobby-projects/hobby-projects.component';
-import { CsProjectsComponent } from './cs-projects/cs-projects.component';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AboutComponent } from './about/about.component';
 import { ResumeComponent } from './resume/resume.component';
-import { FooterComponent } from './footer/footer.component';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { ContactComponent } from './contact/contact.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { ProjectGalleryComponent } from './project-gallery/project-gallery.component';
 
+// Keep the existing NgModule structure. No extra UI framework or CMS is needed.
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavComponent,
+    FooterComponent,
     HomeComponent,
-    ContactComponent,
-    CourseProjectsComponent,
-    OrgProjectsComponent,
-    HobbyProjectsComponent,
-    CsProjectsComponent,
     AboutComponent,
     ResumeComponent,
-    FooterComponent
+    ContactComponent,
+    ProjectCardComponent,
+    ProjectsComponent,
+    ProjectDetailComponent,
+    ProjectGalleryComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    BsDropdownModule.forRoot(),
-    CarouselModule.forRoot()
-  ],
-  providers: [
-    provideClientHydration(withEventReplay()),
-    {
-      provide: 'BootstrapVersion',
-      useFactory: (platformId: Object) => {
-        // Return a default version (e.g., 5) during SSR
-        return isPlatformBrowser(platformId) ? undefined : 'bs5';
-      },
-      deps: [PLATFORM_ID]
-    }
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  providers: [provideClientHydration(withEventReplay())],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

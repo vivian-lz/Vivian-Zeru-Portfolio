@@ -1,8 +1,112 @@
-<h1 class="text-center">Resume (Updated Until January 2026)</h1>
-<br>
-<iframe
-  src="/Vivian_Zeru_Resume_Website.pdf"
-  width="75%"
-  height="800px"
-  style="border: none; margin: 0 auto; display: block"
-></iframe>
+<div class="container section-space">
+  <header class="page-intro">
+    <p class="eyebrow">Experience, leadership & learning</p>
+    <h1>
+      Experience & <span class="underline">Resume</span
+      ><span class="star" aria-hidden="true">✧</span>
+    </h1>
+    <p class="lead">
+      Hardware experience, community, and the work behind the projects.
+    </p>
+    <div class="button-row">
+      <a class="button" href="/Vivian_Zeru_Resume_Website.pdf" download
+        >Download Resume PDF <span aria-hidden="true">↓</span></a
+      ><a
+        class="button button-secondary"
+        href="/Vivian_Zeru_Resume_Website.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        >View PDF <span aria-hidden="true">→</span></a
+      >
+    </div>
+  </header>
+  <nav class="section-nav" aria-label="Resume sections">
+    <a routerLink="/resume" fragment="experience">Experience</a
+    ><a routerLink="/resume" fragment="research">Research</a
+    ><a routerLink="/resume" fragment="leadership">Leadership & Activities</a
+    ><a routerLink="/resume" fragment="education">Education</a
+    ><a routerLink="/resume" fragment="skills">Skills</a>
+  </nav>
+  <div class="resume-layout">
+    <div class="timeline">
+      @for (section of sections; track section.id) {
+        <section [id]="section.id" class="resume-section">
+          <h2>{{ section.title }}</h2>
+          @for (entry of section.entries; track entry.organization) {
+            <article class="surface experience-entry">
+              <div class="entry-heading">
+                <h3>{{ entry.organization }}</h3>
+                <span>{{ entry.dates }}</span>
+              </div>
+              <p class="entry-role">{{ entry.role }}</p>
+              <ul class="story-list">
+                @for (bullet of entry.bullets; track bullet) {
+                  <li>{{ bullet }}</li>
+                }
+              </ul>
+              <ul class="tags">
+                @for (tag of entry.tags; track tag) {
+                  <li>{{ tag }}</li>
+                }
+              </ul>
+            </article>
+          }
+        </section>
+      }
+      <section id="education" class="resume-section">
+        <h2>Education</h2>
+        <article class="surface experience-entry">
+          <h3>Vanderbilt University</h3>
+          <p class="entry-role">
+            B.E. Electrical & Computer Engineering · Expected May 2027
+          </p>
+          <p>Cornelius Vanderbilt Scholar</p>
+          <p>
+            Focus: Microelectronics and Embedded Computing & Cyber-Physical
+            Systems.
+          </p>
+          <p>
+            Graduate coursework in Advanced Analog Electronics, Advanced Digital
+            Electronics, and VLSI Design.
+          </p>
+          <a
+            routerLink="/projects"
+            [queryParams]="{ category: 'Course' }"
+            class="text-link"
+            >Explore Coursework Projects <span aria-hidden="true">→</span></a
+          >
+        </article>
+      </section>
+    </div>
+    <aside id="skills" class="skills-panel">
+      <p class="handwritten">At the workbench</p>
+      <h2>Technical skills</h2>
+      @for (group of skills; track group.title) {
+        <section class="surface">
+          <h3>{{ group.title }}</h3>
+          <ul class="tags">
+            @for (skill of group.items; track skill) {
+              <li>{{ skill }}</li>
+            }
+          </ul>
+        </section>
+      }
+      <a routerLink="/projects" class="text-link"
+        >See these skills in practice <span aria-hidden="true">→</span></a
+      >
+    </aside>
+  </div>
+  <details class="pdf-preview surface">
+    <summary>Preview the downloadable resume</summary>
+    <iframe
+      src="/Vivian_Zeru_Resume_Website.pdf"
+      title="Vivian Zeru resume PDF"
+      loading="lazy"
+    ></iframe>
+    <p>
+      If your browser does not display PDFs,
+      <a href="/Vivian_Zeru_Resume_Website.pdf" download>download the resume</a
+      >.
+    </p>
+  </details>
+</div>

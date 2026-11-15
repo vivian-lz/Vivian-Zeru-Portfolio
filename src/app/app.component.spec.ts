@@ -1,35 +1,49 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
 
-describe('AppComponent', () => {
+describe('Portfolio application shell', () => {
   beforeEach(async () => {
+    // Exercise the actual shell components without requiring an SSR response in a unit test.
     await TestBed.configureTestingModule({
-      imports: [
-        RouterModule.forRoot([])
-      ],
+      imports: [RouterModule.forRoot([])],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        NavComponent,
+        FooterComponent,
       ],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'PortfolioWebsite'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('PortfolioWebsite');
-  });
-
-  it('should render title', () => {
+  it('renders the accessible page shell and original home link', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, PortfolioWebsite');
+    const page = fixture.nativeElement as HTMLElement;
+    expect(page.querySelector('.skip-link')?.getAttribute('href')).toBe(
+      '#main-content',
+    );
+    expect(page.querySelector('main#main-content')).toBeTruthy();
+    expect(page.querySelector('header .wordmark')?.textContent).toContain(
+      'Vivian Zeru',
+    );
+    expect(page.querySelector('footer')).toBeTruthy();
+  });
+
+  it('opens the mobile navigation and closes it after choosing a page', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const page = fixture.nativeElement as HTMLElement;
+    const toggle = page.querySelector('.menu-toggle') as HTMLButtonElement;
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    toggle.click();
+    fixture.detectChanges();
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    (page.querySelector('.site-nav a') as HTMLAnchorElement).click();
+    fixture.detectChanges();
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
   });
 });

@@ -1,91 +1,86 @@
-<div class="text-center">
-    <br>
-    <h1>Project Portfolio</h1>
-    <br>
-    <b>Welcome to my website! It's so nice to see you here.</b>
-    <br>
-    <br>
-    <p>This is a website dedicated to showcase all of the main projects 
-        I have completed related to electrical and computer engineering to 
-        showcase my passion for all aspects of creating things!
-    </p>
-    <p>
-        Whether you are a friend, teacher, mentor, recruiter, 
-        or just a person interested in my work, welcome and
-        thank you for visiting my page! I was inspired by my 
-        Summer 2024 SWE internship doing website and application 
-        development to make this, and a year later, I finally made the
-        time to create the final product and deploy it! I hope that 
-        this website showcases my skills, excitement, and passion
-        for learning new things and exploring all aspects of tech. 
-        Enjoy!
-        <br>
-        <br>
-        <i>
-          Note that this website is more ideal for desktop viewing and 
-          is not fully optimized for mobilie devices.
-        </i>
-    </p>
-    <br>
-</div>
-
-<div class="container">
-    <div class="row">
-        <!--Current Project-->
-        <div class="col-lg shadow border m-1; text-center">
-            <h2>Most Recent Project</h2>
-            <b>Weather Station V2</b>
-            <br>
-            <p>I am about to complete the raw IC PCB Design! This is the second 
-              implementation after the modules.
-            </p>
-            <carousel>
-            <slide>
-              <img src="/weatherstationic.png" alt="first.png slide" style="display: block; width: 65%; margin: 0 auto;">
-              <div class="carousel-caption d-none d-md-block">
-                <h3>2nd PCB Iteration: Raw IC Chips</h3>
-              </div>
-            </slide>
-          </carousel>
-        </div>
-        <!--Featured Project-->
-        <div class="col-lg shadow border m-1; text-center">
-            <h2>Featured Project</h2>
-            <b>Wearable Sensor for Health Monitoring</b>
-            <br>
-            <p>This was my first project as a part of the Du Group Vanderbilt 
-                research lab!
-            </p>
-            <carousel>
-                <slide>
-                  <img src="/researchWearable.jpg" alt="first slide" style="display: block; width: 65%; margin: 0 auto;">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h3>Assembled Wearable Sensor</h3>
-                  </div>
-                </slide>
-                <slide>
-                  <img src="/researchSetup.jpg" alt="second slide" style="display: block; width: 65%; margin: 0 auto;">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h3>PCB Assembly Setup</h3>
-                  </div>
-                </slide>
-                <slide>
-                  <img src="/wearableSolder.jpg" alt="third slide" style="display: block; width: 65%; margin: 0 auto;">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h3>Microscopic Solder Paste View</h3>
-                  </div>
-                </slide>
-                 <!-- Left arrow -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <!-- Right arrow -->
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-              </carousel>
-        </div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="handwritten">Hi, I'm Vivian.</p>
+      <p class="eyebrow">Electrical & Computer Engineering</p>
+      <h1>
+        Curiosity, circuits, and<br class="desktop-break" />
+        things that <span class="underline">work.</span
+        ><span class="star" aria-hidden="true">✧</span>
+      </h1>
+      <p class="lead">
+        Exploring electronics through circuit design, validation, and hands-on
+        engineering.
+      </p>
+      <div class="button-row">
+        <a class="button" routerLink="/projects"
+          >Explore Projects <span aria-hidden="true">→</span></a
+        ><a class="button button-secondary" routerLink="/resume">View Resume</a>
+      </div>
     </div>
-</div>
+    <div class="hero-personal">
+      <div class="portrait-frame">
+        <div class="portrait-crop">
+          <img
+            src="/headshotcrossedarms.jpeg"
+            alt="Vivian Zeru smiling"
+            width="240"
+            height="260"
+            fetchpriority="high"
+          />
+        </div>
+        <span class="portrait-star star" aria-hidden="true">✧</span>
+      </div>
+      <p class="focus-line">
+        PCB Design <span aria-hidden="true">·</span> IC Design
+        <span aria-hidden="true">·</span> Validation & Test
+      </p>
+    </div>
+  </div>
+  <span class="circuit-decoration" aria-hidden="true"></span>
+</section>
+<section class="container section-space" aria-labelledby="featured-title">
+  <div class="section-heading">
+    <h2 id="featured-title">Selected engineering projects</h2>
+    <a routerLink="/projects" class="text-link"
+      >View All Projects <span aria-hidden="true">→</span></a
+    >
+  </div>
+  <nav class="topic-links" aria-label="Browse projects by focus">
+    @for (topic of topics; track topic) {
+      <a class="chip" routerLink="/projects" [queryParams]="{ focus: topic }">{{
+        topic
+      }}</a>
+    }
+  </nav>
+  <div class="project-grid">
+    @for (project of featured; track project.id) {
+      <app-project-card [project]="project" />
+    }
+  </div>
+  <aside class="workbench surface">
+    <h2><span aria-hidden="true">✧</span> On the workbench</h2>
+    <a routerLink="/projects/rad-hard-cpu"
+      ><strong>Rad-Hard CPU</strong
+      ><span
+        >Specification & Simulation <span aria-hidden="true">→</span></span
+      ></a
+    ><a routerLink="/projects/smart-dorm-light"
+      ><strong>Smart Dorm Light</strong
+      ><span>IR Receiver Prototyping <span aria-hidden="true">→</span></span></a
+    >
+  </aside>
+</section>
+<section class="container beyond surface">
+  <div>
+    <p class="eyebrow">Beyond the workbench</p>
+    <h2>An engineer with a love of making things.</h2>
+    <p>
+      From circuits and prototypes to calligraphy, music, and creative
+      problem-solving.
+    </p>
+  </div>
+  <a routerLink="/about" class="text-link"
+    >Meet Vivian <span aria-hidden="true">→</span></a
+  >
+</section>

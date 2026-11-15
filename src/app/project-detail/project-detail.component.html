@@ -1,0 +1,185 @@
+@if (project; as item) {
+  <article class="container case-study section-space">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a routerLink="/projects">Projects</a><span aria-hidden="true">/</span>
+      @if (item.parentId) {
+        <a routerLink="/projects/ic-design">IC Design Collection</a
+        ><span aria-hidden="true">/</span>
+      }
+      <span>{{ item.title }}</span>
+    </nav>
+    <header class="case-header">
+      <p class="eyebrow">{{ item.context }}</p>
+      <h1>{{ item.title }}<span class="star" aria-hidden="true">✧</span></h1>
+      <div class="case-status">
+        <span class="status" [attr.data-status]="item.status">{{
+          item.status
+        }}</span>
+        @if (item.stage) {
+          <span>{{ item.stage }}</span>
+        }
+      </div>
+      <p class="lead">{{ item.summary }}</p>
+      <ul class="tags">
+        @for (tag of item.focus; track tag) {
+          <li>{{ tag }}</li>
+        }
+        @for (tool of item.tools; track tool) {
+          <li>{{ tool }}</li>
+        }
+      </ul>
+      @if (item.links?.length) {
+        <div class="button-row">
+          @for (link of item.links; track link.url) {
+            <a
+              class="button button-secondary"
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ link.label }} <span aria-hidden="true">→</span
+              ><span class="sr-only"> (opens in a new tab)</span></a
+            >
+          }
+        </div>
+      }
+    </header>
+    @if (item.id !== "ic-design") {
+      <div class="project-overview">
+        <section class="surface">
+          <h2>The problem</h2>
+          <p>{{ item.problem }}</p>
+        </section>
+        <section class="surface">
+          <h2>My role</h2>
+          <p>{{ item.role }}</p>
+        </section>
+      </div>
+    }
+    @if (item.metrics) {
+      <section class="section-space">
+        <h2>Simulation results</h2>
+        <div class="metrics-grid">
+          @for (metric of item.metrics; track metric.label) {
+            <div class="surface metric">
+              <h3>{{ metric.label }}</h3>
+              <strong>{{ metric.value }}</strong>
+              <p>{{ metric.context }}</p>
+            </div>
+          }
+        </div>
+      </section>
+    }
+    @if (item.limitation) {
+      <aside class="design-note">
+        <h2>
+          {{
+            item.id === "smart-dorm-light"
+              ? "Current scope"
+              : "Design limitation"
+          }}
+        </h2>
+        <p>{{ item.limitation }}</p>
+      </aside>
+    }
+    <div class="case-body">
+      <div class="case-sections">
+        @for (section of item.sections; track section.title) {
+          <section class="surface story-section">
+            <h2>{{ section.title }}</h2>
+            @for (paragraph of section.paragraphs || []; track paragraph) {
+              <p>{{ paragraph }}</p>
+            }
+            @if (section.bullets) {
+              <ul class="story-list">
+                @for (bullet of section.bullets; track bullet) {
+                  <li>{{ bullet }}</li>
+                }
+              </ul>
+            }
+          </section>
+        }
+      </div>
+      @if (item.images?.length) {
+        <section class="case-evidence" aria-label="Original project images">
+          <!-- The key recreates the gallery on project navigation, resetting its selected image. -->
+          @for (key of [item.id]; track key) {
+            <app-project-gallery [images]="item.images!" />
+          }
+        </section>
+      }
+    </div>
+    @if (children.length) {
+      <section class="section-space" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">From building blocks to a complete design</p>
+            <h2 id="collection-title">Inside the collection</h2>
+          </div>
+        </div>
+        @for (child of children; track child.id; let first = $first) {
+          @if (first) {
+            <article class="surface flagship">
+              <span class="handwritten">Featured case study</span>
+              <h3>{{ child.title }}</h3>
+              <p>{{ child.summary }}</p>
+              <a class="button" [routerLink]="['/projects', child.id]"
+                >Explore Case Study <span aria-hidden="true">→</span></a
+              >
+            </article>
+          } @else {
+            <details class="study-accordion">
+              <summary>{{ child.title }}</summary>
+              <div>
+                <p>{{ child.summary }}</p>
+                <p>{{ child.role }}</p>
+                <a class="text-link" [routerLink]="['/projects', child.id]"
+                  >View Study <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </details>
+          }
+        }
+      </section>
+    }
+    @if (item.video) {
+      <section class="surface section-space">
+        <h2>Project demonstration</h2>
+        <video
+          class="project-video"
+          controls
+          preload="none"
+          [attr.aria-label]="item.title + ' demonstration'"
+        >
+          <source [src]="item.video" type="video/mp4" />
+          Your browser cannot play this video.
+          <a [href]="item.video">Download the demonstration</a>.
+        </video>
+        <p>
+          <a [href]="item.video"
+            >Open original video <span aria-hidden="true">→</span></a
+          >
+        </p>
+      </section>
+    }
+    @if (related.length) {
+      <section class="section-space">
+        <h2>Connected work</h2>
+        <div class="project-grid">
+          @for (project of related; track project.id) {
+            <app-project-card [project]="project" />
+          }
+        </div>
+      </section>
+    }
+    <a routerLink="/projects" class="text-link back-link"
+      ><span aria-hidden="true">←</span> Back to All Projects</a
+    >
+  </article>
+} @else {
+  <section class="container empty-state">
+    <p class="eyebrow">A little detour</p>
+    <h1>Project not found</h1>
+    <p>This project link doesn't match an entry in the collection.</p>
+    <a routerLink="/projects" class="button">Explore All Projects</a>
+  </section>
+}
