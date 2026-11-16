@@ -41,6 +41,7 @@ export interface Project {
   sections: ProjectSection[];
   images?: ProjectImage[];
   imagesHeading?: string;
+  comparison?: { before: ProjectImage; after: ProjectImage };
   links?: { label: string; url: string }[];
   video?: string;
   youtubeVideoId?: string; // The 11-character ID from a YouTube watch link.

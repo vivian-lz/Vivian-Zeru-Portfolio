@@ -13,4 +13,6 @@
 
 - The Shoe Drop Device presentation uses the Team 9 YouTube video supplied by Vivian (`Fx-5khizxQ0`). Public LinkedIn and Vanderbilt project pages could not be read from this environment. The team photo visible in chat was not available as a downloadable workspace file and has not been recreated or substituted.
 
+- The portfolio before/after images are browser screenshots at 1440×1000. The original was rendered from commit `2c9871e1e58b386fc0b44828686aea50df0fd064`, preserved by the annotated `portfolio-original` tag. The redesign screenshot was captured from the review branch. Neither screenshot is an image-generation mockup. Original tutorial/debugging help and substantial AI assistance in the later redesign are acknowledged separately.
+
 The site intentionally distinguishes simulation from measurement, team work from individual ownership, architectural comparisons from measured speedups, and estimated business benefits from realized outcomes.

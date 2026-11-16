@@ -55,6 +55,41 @@
         </section>
       </div>
     }
+    @if (item.comparison; as comparison) {
+      <section class="section-space" aria-labelledby="site-evolution-title">
+        <h2 id="site-evolution-title">How the site evolved</h2>
+        <p>
+          The original site and the AI-assisted redesign, captured at the same
+          desktop size.
+        </p>
+        <div class="comparison-grid">
+          @for (
+            image of [comparison.before, comparison.after];
+            track image.src;
+            let first = $first
+          ) {
+            <figure class="surface comparison-figure">
+              <h3>{{ first ? "Original site" : "AI-assisted redesign" }}</h3>
+              <a
+                [href]="image.src"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="'Open full-size screenshot: ' + image.alt"
+              >
+                <img
+                  [src]="image.src"
+                  [alt]="image.alt"
+                  width="1440"
+                  height="1000"
+                  loading="lazy"
+                />
+              </a>
+              <figcaption>{{ image.caption }}</figcaption>
+            </figure>
+          }
+        </div>
+      </section>
+    }
     @if (item.metrics) {
       <section class="section-space">
         <h2>Simulation results</h2>

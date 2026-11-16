@@ -1148,18 +1148,60 @@ export const PROJECTS: Project[] = [
     status: 'In Progress',
     stage: 'Ongoing Portfolio',
     summary:
-      'My Angular home for documenting engineering work and the decisions behind it.',
+      'My original Angular portfolio, evolved into a hardware-focused showcase through a redesign I directed with AI assistance.',
     focus: ['Software'],
     tools: ['Angular', 'TypeScript', 'HTML', 'CSS'],
     context: 'Personal website',
-    role: 'Original site author and ongoing content owner, with AI assistance on the redesign.',
+    role: 'Original site author and redesign lead, with substantial AI assistance in the redesign’s design and implementation.',
     problem:
-      'Make engineering projects and individual contributions easy to discover and understand.',
+      'Make engineering projects and individual contributions easy to discover while keeping the site personal and understandable to maintain.',
+    comparison: {
+      before: {
+        src: '/project-images/portfolio-history/original-home.png',
+        alt: 'Original Vivian-built Angular homepage with a light-blue name banner, category navigation, and featured project carousels',
+        caption:
+          'Original version: designed and implemented by me in Angular, with tutorial guidance and AI debugging assistance. Preserved under the portfolio-original tag.',
+      },
+      after: {
+        src: '/project-images/portfolio-history/redesign-home.png',
+        alt: 'Redesigned light-blue homepage with a smaller portrait, engineering project cards, and hardware focus links',
+        caption:
+          'Redesign: I directed the visual identity, hardware emphasis, content, and review, with substantial AI assistance in design and implementation.',
+      },
+    },
     sections: [
       {
-        title: 'Origin & evolution',
+        title: 'The original site',
         paragraphs: [
-          'I originally built this portfolio myself using Angular and knowledge gained during my software internship, with tutorial guidance and AI debugging assistance. The redesign organizes project content, improves mobile layouts, and keeps the code readable for future editing.',
+          'I originally built this portfolio in Angular using HTML, CSS, TypeScript, and knowledge gained during my software internship. Tutorial guidance helped me get started, and I used AI for debugging assistance. That version represents my own work learning to create and maintain a website.',
+        ],
+      },
+      {
+        title: 'My direction, with AI-assisted implementation',
+        paragraphs: [
+          'For the redesign, I set the hardware-focused direction, chose the light-blue visual identity and personal details, and reviewed the presentation of my projects. I supplied the project history, clarified my contributions, and checked the descriptions against my work.',
+          'AI contributed substantially to design proposals, Angular implementation, refactoring, and validation. The result reflects my direction and review alongside that implementation assistance.',
+        ],
+      },
+      {
+        title: 'What changed',
+        bullets: [
+          'A searchable project directory with technical focus and status filters.',
+          'Shareable case studies explaining the problem, my role, design decisions, evidence, and current scope.',
+          'Responsive layouts, accessible navigation, and galleries using my project photographs and report figures.',
+          'Readable project data and a code-editing guide for future updates.',
+        ],
+      },
+      {
+        title: 'Why I chose this approach',
+        paragraphs: [
+          'My primary focus is hardware: circuit design, PCB and IC work, validation, and hands-on engineering. AI assistance helped me improve how I communicate that work while keeping my learning focused on those areas. I remain responsible for the project descriptions and for deciding how the site represents me.',
+        ],
+      },
+      {
+        title: 'Preserving the original',
+        paragraphs: [
+          'The original code is saved under the portfolio-original Git tag and remains available in the repository history. The screenshots above document the visual evolution, and the original version can be revisited without maintaining two separate websites.',
         ],
       },
     ],
@@ -1167,6 +1209,10 @@ export const PROJECTS: Project[] = [
       {
         label: 'View GitHub',
         url: 'https://github.com/vivian-lz/Vivian-Zeru-Portfolio',
+      },
+      {
+        label: 'Explore Original Code',
+        url: 'https://github.com/vivian-lz/Vivian-Zeru-Portfolio/tree/portfolio-original',
       },
     ],
   },
