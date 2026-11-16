@@ -400,9 +400,9 @@ export const PROJECTS: Project[] = [
     status: 'In Progress',
     stage: 'Startup Concept Development',
     summary:
-      'A plant health startup concept connecting environmental sensing with planned growth-stage insights.',
-    focus: ['Product Exploration', 'Embedded Systems'],
-    tools: ['System Architecture', 'Concept Development'],
+      'A plant-health startup concept exploring environmental sensing and growth-stage insights; hardware work has not started.',
+    focus: ['Product Exploration'],
+    tools: ['Concept Development'],
     context: 'AI, Entrepreneurship, and Startups · ECE 4611',
     role: 'Proposed a plant health monitoring system for the class venture.',
     problem:
@@ -411,14 +411,14 @@ export const PROJECTS: Project[] = [
       {
         title: 'Current scope',
         paragraphs: [
-          'Sproutly is the active startup concept for my class. The class does not require a PCB, although I am considering developing one. Hardware development is a possibility rather than a completed deliverable.',
+          'Sproutly is the active startup concept for my class. Current work is concept development; PCB design, firmware, and hardware prototyping have not started. The class does not require a PCB, although I am considering developing one.',
         ],
       },
       {
-        title: 'Proposed system architecture',
+        title: 'Possible hardware direction',
         paragraphs: [
-          'The Sproutly repository outlines an ESP32-based sensor system using soil moisture, BH1750 light sensing, and BME280 temperature/humidity sensing, with a display and wireless connection to an application.',
-          'The planned software would use environmental history and plant-specific information to explore growth-stage predictions and care recommendations. Firmware is documented as being in planning; these are proposed capabilities, not validated product results.',
+          'If I pursue a hardware implementation, the repository’s proposed direction is an ESP32-based device with soil moisture, BH1750 light sensing, BME280 temperature/humidity sensing, a display, and a wireless application connection.',
+          'The product concept includes growth-stage insights and care recommendations based on environmental history and plant-specific information. These features would require future software, firmware, and validation work.',
         ],
       },
       {

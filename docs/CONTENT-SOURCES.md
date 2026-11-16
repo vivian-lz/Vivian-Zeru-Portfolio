@@ -15,4 +15,6 @@
 
 - The portfolio before/after images are browser screenshots at 1440×1000. The original was rendered from commit `2c9871e1e58b386fc0b44828686aea50df0fd064`, preserved by the annotated `portfolio-original` tag. The redesign screenshot was captured from the review branch. Neither screenshot is an image-generation mockup. Original tutorial/debugging help and substantial AI assistance in the later redesign are acknowledged separately.
 
+- Vivian clarified that Sproutly has no completed PCB or technical hardware work. Its portfolio focus is Product Exploration, with concept development distinguished from optional future hardware implementation. The new product and exploded-view renderings supplied inline in chat are conceptual visuals; their original downloadable files are still needed before they can be added unchanged.
+
 The site intentionally distinguishes simulation from measurement, team work from individual ownership, architectural comparisons from measured speedups, and estimated business benefits from realized outcomes.
