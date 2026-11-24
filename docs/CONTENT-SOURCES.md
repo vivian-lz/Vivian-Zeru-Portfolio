@@ -17,4 +17,6 @@
 
 - Vivian clarified that Sproutly has no completed PCB or technical hardware work. Its portfolio focus is Product Exploration, with concept development distinguished from optional future hardware implementation. The new product and exploded-view renderings supplied inline in chat are conceptual visuals; their original downloadable files are still needed before they can be added unchanged.
 
+- Vivian’s November 2026 Tech Crew and Rainworks notes supply the updated campus roles, dates, membership/proctor counts, makerspace schedule, KiCad/GitHub transition, SD-card work, and validation-planning scope. Lab Proctor is dated Aug 2024–May 2025; ULA dates were not supplied and are omitted. Rainworks distinguishes the Fall 2025 Electrical Lead role from Co-Lead beginning Spring 2026. The founding-member and Spring 2025 crew photos mentioned in the message did not arrive as files, so no new photos are represented. Existing Rainworks images remain labeled as earlier iterations.
+
 The site intentionally distinguishes simulation from measurement, team work from individual ownership, architectural comparisons from measured speedups, and estimated business benefits from realized outcomes.

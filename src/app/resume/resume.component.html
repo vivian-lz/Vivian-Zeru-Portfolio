@@ -32,11 +32,16 @@
       @for (section of sections; track section.id) {
         <section [id]="section.id" class="resume-section">
           <h2>{{ section.title }}</h2>
-          @for (entry of section.entries; track entry.organization) {
+          @for (
+            entry of section.entries;
+            track entry.organization + ":" + entry.role
+          ) {
             <article class="surface experience-entry">
               <div class="entry-heading">
                 <h3>{{ entry.organization }}</h3>
-                <span>{{ entry.dates }}</span>
+                @if (entry.dates) {
+                  <span>{{ entry.dates }}</span>
+                }
               </div>
               <p class="entry-role">{{ entry.role }}</p>
               <ul class="story-list">
@@ -49,6 +54,13 @@
                   <li>{{ tag }}</li>
                 }
               </ul>
+              @if (entry.projectLink; as project) {
+                <a
+                  class="text-link experience-project-link"
+                  [routerLink]="['/projects', project.id]"
+                  >{{ project.label }} <span aria-hidden="true">→</span></a
+                >
+              }
             </article>
           }
         </section>

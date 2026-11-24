@@ -21,6 +21,8 @@ This is still the Angular application Vivian originally built. It keeps the NgMo
 
 `AppComponent` renders the header, a router outlet inside the main landmark, and footer. Angular's router chooses the page shown in that outlet.
 
+`experience.ts` uses a small `ExperienceEntry` type: dates are optional, and `projectLink` can connect a role to its project case study. Distinct roles in the same organization are displayed separately. Leave unknown dates unset.
+
 `projects.ts` is a plain list of project objects. `ProjectCardComponent` receives one of those objects as an input and displays a preview. The directory filters the same list; a detail page looks up the ID from its URL and renders that project's sections. Editing a project in the list updates every place that uses it.
 
 Angular templates use `{{ value }}` to show text, `[property]` to pass a value, and `(event)` to run a method when something happens. `@for` repeats a block, and `@if` shows it conditionally. `[(ngModel)]` connects a directory form control to a TypeScript property.

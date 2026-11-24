@@ -41,36 +41,63 @@ export const PROJECTS: Project[] = [
     title: 'Stormwater Runoff Device',
     category: 'Organization',
     status: 'In Progress',
-    stage: 'Preparing for System Validation',
+    stage: 'Preparing Hardware & System Validation',
     summary:
-      'Sensor PCB collaboration, calibration, and low-power work for campus runoff monitoring.',
+      'Electrical leadership, PCB redesign, SD-card integration, and validation planning for campus runoff monitoring.',
     focus: ['PCB Design', 'Validation & Test', 'Embedded Systems'],
-    tools: ['EasyEDA', 'Arduino IDE', 'ESP8266', 'ThingSpeak'],
+    tools: [
+      'KiCad',
+      'GitHub',
+      'EasyEDA',
+      'Arduino IDE',
+      'ESP8266',
+      'ThingSpeak',
+    ],
     context: 'Engineers Without Borders · EPA Rainworks project',
-    role: 'Electrical contributor and lead; PCB collaboration, sensor calibration, and debugging.',
+    role: 'Electrical Lead in Fall 2025, then Co-Lead from Spring 2026; earlier PCB, sensor-calibration, and prototype-debugging contributor.',
     problem:
       'Collect environmental measurements from a deployable, battery-powered stormwater monitoring device.',
     sections: [
       {
         title: 'My contribution',
         bullets: [
-          'Helped calibrate the conductivity sensor using salinity and molarity calculations.',
-          'Collaborated with the project manager on schematic and layout design for a 2-layer PCB.',
-          'Helped debug and calibrate the prototype, taught other students about its electronics, and coordinated electrical tasks.',
-          'Worked on deep-sleep firmware with the firmware team to reduce microcontroller power draw.',
+          'Led and co-led the electrical team’s schematic, layout, and prototype-testing efforts as the project moved toward SD-card local storage.',
+          'Led the Fall 2026 transition to KiCad and GitHub version control for the electrical team.',
+          'Added decoupling and bulk capacitors and resistor networks to support SD-card SPI requirements, with attention to transient behavior, signal integrity, and ESD-protection considerations.',
+          'Helped debug electronics, calibrate sensors, and teach new members how the sensing hardware operates.',
         ],
       },
       {
-        title: 'System design',
+        title: 'SD-card integration & design decisions',
         paragraphs: [
-          'The documented earlier design measured pH, conductivity, turbidity, flow rate, and soil moisture using an ESP8266 ThingDev and an ADC. It sent measurements to ThingSpeak and used a PLA enclosure designed in SolidWorks.',
-          'The earlier firmware introduced deep sleep every 15 seconds, with approximately 150 mA active current and 20 µA during sleep. These are operating-state currents, not a measured average-power or battery-life result.',
+          'The SD-card revision adds local storage to the monitoring device. I worked on its schematic and layout in EasyEDA during Fall 2025 and Spring 2026, followed by the team’s move to KiCad and GitHub in Fall 2026.',
+          'The later work used component-level passive circuitry instead of relying on a plug-and-play module, with the goal of reducing PCB space while supporting the SD-card interface. Supply decoupling, bulk capacitance, and resistor networks were design considerations for the SPI connection and electrical robustness.',
         ],
       },
       {
-        title: 'Current milestone & next steps',
+        title: 'Development & leadership timeline',
+        bullets: [
+          'Fall 2023 — Calculated salinity and conductivity relationships to assess sensor test data.',
+          'Spring 2024 — Studied sensor, microcontroller, and ADC operation, assembled electronics in the enclosure, and prepared to teach new members.',
+          'Fall 2024 — Created PCB schematic and layout work to reduce the space occupied by wiring.',
+          'Spring 2025 — Served as a second electrical lead and helped complete a field-deployable prototype through PCB debugging and sensor calibration.',
+          'Fall 2025 — Became Electrical Lead and led PCB redesign and testing efforts, including SD-card integration in EasyEDA.',
+          'Spring 2026 — Transitioned to Co-Lead while interning off campus and continued the SD-card schematic/layout effort.',
+          'Fall 2026 — Led the KiCad and GitHub transition, refined component-level SD-card circuitry, and began planning hardware-validation efforts.',
+        ],
+      },
+      {
+        title: 'Earlier system & low-power work',
         paragraphs: [
-          'The team has finished and fabricated the SD-card prototype. In-system validation is the next stage; results from that validation are not yet available. The images below document earlier iterations.',
+          'The earlier design measured pH, conductivity, turbidity, flow rate, and soil moisture using an ESP8266 ThingDev and an ADC. It sent measurements to ThingSpeak and used a PLA enclosure designed in SolidWorks.',
+          'I also worked on deep-sleep firmware with the firmware team. The earlier firmware introduced sleep every 15 seconds, with approximately 150 mA active current and 20 µA during sleep. These are operating-state currents rather than measured average power or battery-life results.',
+        ],
+      },
+      {
+        title: 'Current milestone & validation planning',
+        paragraphs: [
+          'The SD-card prototype is finished and fabricated. I am beginning the process of leading hardware-validation efforts; in-system checks are the next stage. Validation results will be documented as that work progresses.',
+          'The photographs and schematic below document earlier iterations of the device.',
         ],
       },
     ],
