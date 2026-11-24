@@ -1,0 +1,45 @@
+@if (images[selectedIndex]; as image) {
+  <figure class="gallery">
+    <a
+      [href]="image.src"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="gallery-image"
+      aria-label="Open full-size project image in a new tab"
+    >
+      <img
+        [src]="image.src"
+        [alt]="image.alt"
+        width="1000"
+        height="700"
+        loading="lazy"
+      />
+    </a>
+    <figcaption aria-live="polite">
+      {{ image.caption }}
+      <a [href]="image.src" target="_blank" rel="noopener noreferrer"
+        >Open full-size image <span aria-hidden="true">→</span></a
+      >
+    </figcaption>
+    @if (images.length > 1) {
+      <div class="gallery-thumbnails" aria-label="Choose a project image">
+        @for (item of images; track item.src; let index = $index) {
+          <button
+            type="button"
+            (click)="selectedIndex = index"
+            [attr.aria-pressed]="selectedIndex === index"
+            [attr.aria-label]="'Show image: ' + item.caption"
+          >
+            <img
+              [src]="item.src"
+              alt=""
+              width="96"
+              height="68"
+              loading="lazy"
+            />
+          </button>
+        }
+      </div>
+    }
+  </figure>
+}

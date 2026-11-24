@@ -1,0 +1,88 @@
+<section class="page-intro container">
+  <p class="eyebrow">A collection of things I've built & explored</p>
+  <h1>
+    Explore the <span class="underline">projects</span
+    ><span class="star" aria-hidden="true">✧</span>
+  </h1>
+  <p class="lead">
+    Circuit design, hardware validation, and the ideas in between.
+  </p>
+</section>
+<section class="container section-space" aria-label="Project directory">
+  <div class="filter-panel">
+    <fieldset class="filter-row">
+      <legend>Focus</legend>
+      <div class="filter-options">
+        @for (value of focusOptions; track value) {
+          <button
+            type="button"
+            class="chip"
+            [attr.aria-pressed]="focus === value"
+            (click)="focus = value; updateFilters()"
+          >
+            {{ value }}
+          </button>
+        }
+      </div>
+    </fieldset>
+    <fieldset class="filter-row">
+      <legend>Status</legend>
+      <div class="filter-options">
+        @for (value of statusOptions; track value) {
+          <button
+            type="button"
+            class="chip"
+            [attr.aria-pressed]="status === value"
+            (click)="status = value; updateFilters()"
+          >
+            {{ value }}
+          </button>
+        }
+      </div>
+    </fieldset>
+    <div class="search-row">
+      <label class="search-label"
+        >Search projects or tools<input
+          type="search"
+          placeholder="Try “LTspice”, “DFF”, or “PCB”…"
+          [(ngModel)]="query"
+          (ngModelChange)="updateFilters()"
+      /></label>
+      <label
+        >Collection<select
+          aria-label="Collection"
+          [(ngModel)]="category"
+          (ngModelChange)="updateFilters()"
+        >
+          <option>All</option>
+          @for (value of categories; track value) {
+            <option>{{ value }}</option>
+          }
+        </select></label
+      >
+      <button class="text-button" type="button" (click)="resetFilters()">
+        Clear filters
+      </button>
+    </div>
+  </div>
+  <div class="results-heading">
+    <p role="status">
+      {{ visibleProjects.length }}
+      {{ visibleProjects.length === 1 ? "project" : "projects" }} found
+    </p>
+    <p>Paused and archived work stays part of the story.</p>
+  </div>
+  <div class="project-grid">
+    @for (project of visibleProjects; track project.id) {
+      <app-project-card [project]="project" />
+    } @empty {
+      <div class="empty-state">
+        <h2>No projects match just yet.</h2>
+        <p>Try a different topic, tool, or status.</p>
+        <button type="button" class="button" (click)="resetFilters()">
+          Show All Projects
+        </button>
+      </div>
+    }
+  </div>
+</section>

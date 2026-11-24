@@ -1,11 +1,20 @@
-<footer style="text-align:center; padding: 1em 0; background-color: #DEF7FF; font-size: 0.9em; color: #b1babb;">
-    <p>&copy; 
-        2026 Vivian Zeru. 
-        All rights reserved. 
-        This website was created using the assistance of the "Software Engineering Skills" 
-        YouTube channel tutorials on creating a portfolio for ideas, and the code was 
-        debugged with the assistance of AI tools. However, the bulk of the website 
-        was still created by myself and myself only, utilizng my own knowledge from 
-        experience.  
-        Last updated: January 31, 2026</p>
-  </footer>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <a class="wordmark" routerLink="/home"
+        >Vivian Zeru<span class="brand-star" aria-hidden="true">☆</span></a
+      >
+      <p>Curiosity. Circuits. A little creativity.</p>
+      <a class="text-link" routerLink="/contact"
+        >Let's connect <span aria-hidden="true">→</span></a
+      >
+    </div>
+    <div class="footer-bottom">
+      <p>{{ year }} Vivian Zeru.</p>
+      <p>
+        Originally built by me in Angular; later redesigned with AI assistance.
+        <a routerLink="/projects/portfolio-website">About this site</a>
+      </p>
+    </div>
+  </div>
+</footer>
